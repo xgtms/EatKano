@@ -25,8 +25,7 @@
         <div id="GameScoreLayer-bast" style="margin:5px 0">期末成绩</div>
         <button type="button" class="btn btn-secondary btn-lg" id="replay" onclick="replayBtn()">复读</button>
         <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.reload()">离开考场</button>
-        
-    </div>
+     </div>
 </div>
 </div>
 <div id="welcome" class="SHADE BOX-M">
@@ -42,6 +41,7 @@
             <div id="btn_group" style="display: block;">
                 <a class="btn btn-primary btn-lg" onclick="readyBtn()">开始考试</a>
                 <br/><br/>
+                
                 <div class="dropdown">
                     <a class="btn btn-secondary btn-lg" href="javascript: void(0);" role="button" id="mode" data-bs-toggle="dropdown" aria-expanded="false">普通模式</a>
                     <ul class="dropdown-menu" aria-labelledby="mode">
@@ -55,7 +55,44 @@
                 <a class="btn btn-secondary btn-lg" onclick="show_setting()">游戏设置</a>
             </div>
             <div id="setting" style="display: none;">
-                <div class="container mb-3">n>
+                <div class="container mb-3">
+                    <input type="button" class="btn btn-secondary btn-lg" onclick="getClickBeforeImage()" value="设置点击前的图" style="left: 0">
+                    <input type="file" id="click-before-image" accept="image/*" style="display: none;" onchange="saveClickBeforeImage()">
+                    <input type="button" class="btn btn-secondary btn-lg" onclick="getClickAfterImage()" value="设置点击后的图" style="right: 0">
+                    <input type="file" id="click-after-image" accept="image/*" style="display: none;" onchange="saveClickAfterImage()">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">标题</span>
+                    </div>
+                    <input type="text" id="title" class="form-control" placeholder="吃掉小鹿乃">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">按键</span>
+                    </div>
+                    <input type="text" id="keyboard" class="form-control" maxlength=4 placeholder="默认为DFJK">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">时间</span>
+                    </div>
+                    <input type="text" id="gameTime" class="form-control" maxlength=4 placeholder="默认为20秒">
+                </div>
+                <!-- 此为无排行榜版本，隐藏了名字留言 -->
+                <div class="input-group mb-3" style="display: none;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">名字</span>
+                    </div>
+                    <input type="text" id="username" class="form-control" maxlength=8 placeholder="用于纪录排行(特殊字符会被过滤)">
+                </div>
+                <div class="input-group mb-3" style="display: none;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">留言</span>
+                    </div>
+                    <input type="text" id="message" class="form-control" maxlength=50 placeholder="禁广告/脏话(本项可不填)">
+                </div>
+                <button type="button" class="btn btn-secondary btn-lg" onclick="show_btn();save_cookie();">完成</button>
             </div>
         </div>
     </div>
