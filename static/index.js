@@ -404,9 +404,9 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         l.attr('class', l.attr('class').replace(/bgc\d/, 'bgc' + c));
         $('#GameScoreLayer-text').html(shareText(cps));
         let normalCond = legalDeviationTime() || mode !== MODE_NORMAL;
-        //显示CPS
+        //显示努力值
 
-        $('#GameScoreLayer-CPS').html('CPS&nbsp;' + cps.toFixed(2)); //获取CPS
+        $('#GameScoreLayer-CPS').html('CPS&nbsp;' + cps.toFixed(2)); //获取努力值
         $('#GameScoreLayer-score').css('display', mode === MODE_ENDLESS ? 'none' : '')
             .html('分数&nbsp;' + (normalCond ? score : "<span style='color:red;'>" + score + "</span>"));
         $('#GameScoreLayer-bast').html('最佳成绩&nbsp;' + scoreToString(best));
@@ -442,8 +442,8 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         if (cps <= 5) return '滚回去再复习？';
         if (cps <= 8) return '奖励一步手机';
         if (cps <= 10)  return '您是我吴伟的爹';
-        if (cps <= 15) return '您';
-        return '人？';
+        if (cps <= 15) return '您是吴夏辉的爹';
+        return '您是大学生';
     }
 
     function toStr(obj) {
