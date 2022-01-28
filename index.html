@@ -2,9 +2,9 @@
 <html lang="zh">
 
 <head>
-    <title>吃掉小鹿乃</title>
-    <meta itemprop="name" content="吃掉小鹿乃" />
-    <meta itemprop="description" content="新概念音游" />
+    <title>吃掉小吴伟</title>
+    <meta itemprop="name" content="吃掉小吴伟" />
+    <meta itemprop="description" content="七中小游戏" />
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width,target-densitydpi=device-dpi" />
     <link href="./static/index.css" rel="stylesheet" type="text/css">
@@ -21,12 +21,12 @@
     <div style="padding:5%;margin-top: 200px;background-color: rgba(125, 181, 216, 0.3);">
         <div id="GameScoreLayer-text"></div>
         <div id="GameScoreLayer-CPS" style="margin:5px 0;"></div>
-        <div id="GameScoreLayer-score" style="margin:5px 0;">得分</div>
-        <div id="GameScoreLayer-bast" style="margin:5px 0">最佳</div>
-        <button type="button" class="btn btn-secondary btn-lg" id="replay" onclick="replayBtn()">重来</button>
+        <div id="GameScoreLayer-score" style="margin:5px 0;">分数</div>
+        <div id="GameScoreLayer-bast" style="margin:5px 0">高考分数</div>
+        <button type="button" class="btn btn-secondary btn-lg" id="replay" onclick="replayBtn()">复读</button>
         <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.reload()">主页</button>
-        <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='https://github.com/arcxingye/EatKano'">开源</button>
-    </div>
+        <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='https://github.com/arcxingye/EatKano'">你也来试试（无法保存）</button>v>
+     </div>
 </div>
 </div>
 <div id="welcome" class="SHADE BOX-M">
@@ -46,14 +46,14 @@
                 <div class="dropdown">
                     <a class="btn btn-secondary btn-lg" href="javascript: void(0);" role="button" id="mode" data-bs-toggle="dropdown" aria-expanded="false">普通模式</a>
                     <ul class="dropdown-menu" aria-labelledby="mode">
-                        <li><a class="dropdown-item" onclick="changeMode(MODE_NORMAL)">普通模式</a></li>
-                        <li><a class="dropdown-item" onclick="changeMode(MODE_ENDLESS)">无尽模式</a></li>
-                        <li><a class="dropdown-item" onclick="changeMode(MODE_PRACTICE)">练习模式</a></li>
+                        <li><a class="dropdown-item" onclick="changeMode(MODE_NORMAL)">五年高考</a></li>
+                        <li><a class="dropdown-item" onclick="changeMode(MODE_ENDLESS)">无尽复读</a></li>
+                        <li><a class="dropdown-item" onclick="changeMode(MODE_PRACTICE)">三年模拟</a></li>
                     </ul>
                 </div>
 
                 <br/>
-                <a class="btn btn-secondary btn-lg" onclick="show_setting()">游戏设置</a>
+                <a class="btn btn-secondary btn-lg" onclick="show_setting()">（无法保存）</a>
             </div>
             <div id="setting" style="display: none;">
                 <div class="container mb-3">
