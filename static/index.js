@@ -440,7 +440,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         }
 
         if (cps <= 5) return '滚回去再复习？';
-        if (cps <= 8) return '奖励一步手机';
+        if (cps <= 8) return '奖励一部手机';
         if (cps <= 10)  return '您是我吴伟的爹';
         if (cps <= 15) return '您是吴夏辉的爹';
         return '您是大学生';
