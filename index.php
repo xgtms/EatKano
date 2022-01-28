@@ -2,9 +2,9 @@
 <html lang="zh">
 
 <head>
-    <title>吃掉小鹿乃</title>
-    <meta itemprop="name" content="吃掉小鹿乃" />
-    <meta itemprop="description" content="新概念音游" />
+    <title>吃掉小吴伟</title>
+    <meta itemprop="name" content="吃掉小吴伟" />
+    <meta itemprop="description" content="七中小游戏" />
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width,target-densitydpi=device-dpi" />
     <link href="./static/index.css" rel="stylesheet" type="text/css">
@@ -27,13 +27,13 @@
         <div style="padding:5%;margin-top: 200px;background-color: rgba(125, 181, 216, 0.3);">
             <div id="GameScoreLayer-text"></div>
             <div id="GameScoreLayer-CPS" style="margin:5px 0;"></div>
-            <div id="GameScoreLayer-score" style="margin:10px 0;">得分</div>
-            <div id="GameScoreLayer-bast">最佳</div>
-            <button type="button" class="btn btn-secondary btn-lg" id="replay" onclick="replayBtn()">重来</button>
+            <div id="GameScoreLayer-score" style="margin:10px 0;">月考成绩</div>
+            <div id="GameScoreLayer-bast">期末成绩</div>
+            <button type="button" class="btn btn-secondary btn-lg" id="replay" onclick="replayBtn()">补考</button>
         <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.reload()">主页</button>
 			<button type="button" class="btn btn-secondary btn-lg" onclick="goRank();">排行</button>
-            <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='https://github.com/arcxingye/EatKano'">开源</button>
-        </div>
+            
+         </div>
     </div>
     </div>
     <div id="welcome" class="SHADE BOX-M">
