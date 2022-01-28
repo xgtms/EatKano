@@ -55,7 +55,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function modeToString(m) {
-        return m === MODE_NORMAL ? "普通模式" : (m === MODE_ENDLESS ? "无尽模式" : "练习模式");
+        return m === MODE_NORMAL ? "五年高考" : (m === MODE_ENDLESS ? "留级" : "三年模拟");
     }
 
     w.changeMode = function(m) {
@@ -178,7 +178,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         _gameTimeNum--;
         _gameStartTime++;
         if (mode === MODE_NORMAL && _gameTimeNum <= 0) {
-            GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;时间到！';
+            GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;考试时间到！';
             gameOver();
             GameLayerBG.className += ' flash';
             createjs.Sound.play("end");
@@ -191,7 +191,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
             GameTimeLayer.innerHTML = createTimeText(_gameTimeNum);
         } else if (mode === MODE_ENDLESS) {
             let cps = getCPS();
-            let text = (cps === 0 ? '计算中' : cps.toFixed(2));
+            let text = (cps === 0 ? '计分中' : cps.toFixed(2));
             GameTimeLayer.innerHTML = `CPS:${text}`;
         } else {
             GameTimeLayer.innerHTML = `SCORE:${_gameScore}`;
@@ -381,7 +381,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function getBestScore(score) {
-        // 练习模式不会进入算分界面
+        // 三年模拟不会进入算高考排名
         let cookieName = (mode === MODE_NORMAL ? 'bast-score' : 'endless-best-score');
         let best = cookie(cookieName) ? Math.max(parseFloat(cookie(cookieName)), score) : score;
         cookie(cookieName, best.toFixed(2), 100);
@@ -408,8 +408,8 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
 
         $('#GameScoreLayer-CPS').html('CPS&nbsp;' + cps.toFixed(2)); //获取CPS
         $('#GameScoreLayer-score').css('display', mode === MODE_ENDLESS ? 'none' : '')
-            .html('得分&nbsp;' + (normalCond ? score : "<span style='color:red;'>" + score + "</span>"));
-        $('#GameScoreLayer-bast').html('最佳&nbsp;' + scoreToString(best));
+            .html('分数&nbsp;' + (normalCond ? score : "<span style='color:red;'>" + score + "</span>"));
+        $('#GameScoreLayer-bast').html('最佳成绩&nbsp;' + scoreToString(best));
 
         l.css('display', 'block');
     }
@@ -439,9 +439,9 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
             SubmitResults();
         }
 
-        if (cps <= 5) return '试着好好练一下？';
-        if (cps <= 8) return 'TCL';
-        if (cps <= 10)  return 'TQL';
+        if (cps <= 5) return '滚回去再复习？';
+        if (cps <= 8) return '奖励一步手机';
+        if (cps <= 10)  return '您是我吴伟的爹';
         if (cps <= 15) return '您';
         return '人？';
     }
@@ -480,7 +480,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     function initSetting() {
         $("#username").val(cookie("username") ? cookie("username") : "");
         $("#message").val(cookie("message") ? cookie("message") : "");
-        $("title").text(cookie("title") ? cookie("title") : "吃掉小鹿乃");
+        $("title").text(cookie("title") ? cookie("title") : "吃掉小吴伟");
         let keyboard = cookie('keyboard');
         if (keyboard) {
             keyboard = keyboard.toString().toLowerCase();
